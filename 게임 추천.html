@@ -41,3 +41,86 @@
         transform: translateY(-5px); 
         border-color: #66c0f4;
     }
+    /* 顶部图片 - 这里用本地图片 */
+    .game-img {
+        width: 100%; 
+        height: 160px; 
+        background-size: cover; 
+        background-position: center;
+        /* 如果本地图片名字不对，会显示灰色背景 */
+        background-color: #333; 
+    }
+
+    .game-info { padding: 20px; }
+
+    .title-en { 
+        font-size: 20px; 
+        font-weight: bold; 
+        color: #ffffff; 
+        margin-bottom: 2px;
+    }
+    .title-zh {
+        font-size: 14px;
+        color: #aaaaaa;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 13px;
+        color: #888;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #333;
+    }
+
+    .players {
+        color: #4caf50;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        box-shadow: 0 0 5px #4caf50;
+    }
+
+    .review { color: #66c0f4; }
+
+    .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .price { 
+        color: #a4d007; 
+        font-size: 18px; 
+        font-weight: bold; 
+    }
+    .buy-btn {
+        background-color: #4c6b22;
+        color: #d2e885;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+    .buy-btn:hover { background-color: #5c8229; }
+
+</style>
+</head>

@@ -128,7 +128,7 @@
 
     <h1>Top Game Recommendations</h1>
 
-    <div class="game-list">
+    <div class="game-list" id="game-list"></div>
 
         <!-- 1. 星露谷物语 -->
         <div class="game-card">
@@ -347,7 +347,46 @@
         </div>
 
     </div>
+<!-- 下面是今天学到的 DOM 和 事件操作 -->
+    <script>
+        window.onload = function() {
+            // 1. 抓取所有的游戏卡片和按钮
+            let cards = document.querySelectorAll('.game-card');
+            let buyBtns = document.querySelectorAll('.buy-btn');
 
+            // 2. 功能一：点击购物车按钮（使用 addEventListener）
+            buyBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault(); // 防止点击后网页乱跳
+                    
+                    // 修改文字和样式（使用 setAttribute）
+                    this.textContent = 'Added! ✔';
+                    this.setAttribute('style', 'background-color: #ff4c4c; color: white;'); 
+                });
+            });
+
+            // 3. 功能二 & 三：鼠标移入移出事件（mouseover / mouseout）
+            cards.forEach(function(card) {
+                let img = card.querySelector('.game-img'); // 获取卡片里的图片
+                let title = card.querySelector('.title-en'); // 获取卡片里的英文名
+
+                // 鼠标移入
+                card.addEventListener('mouseover', function() {
+                    img.style.transform = 'scale(1.1)'; // 图片放大
+                    img.style.transition = 'transform 0.3s';
+                    title.style.color = '#66c0f4'; // 标题变蓝
+                    title.style.textShadow = '0 0 10px #66c0f4'; // 标题发光
+                });
+
+                // 鼠标移出
+                card.addEventListener('mouseout', function() {
+                    img.style.transform = 'scale(1)'; // 图片恢复
+                    title.style.color = '#ffffff'; // 标题变白
+                    title.style.textShadow = 'none'; // 取消发光
+                });
+            });
+        };
+    </script>
 </html>
 </body>
 
